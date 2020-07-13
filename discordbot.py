@@ -15,7 +15,7 @@ async def on_command_error(ctx, error):
 
 @bot.command()
 async def moni(ctx):
-    await ctx.send('昭和')
+    await ctx.send('もに〜？もにもに〜！もに！')
 
 
 bot.run(token)
