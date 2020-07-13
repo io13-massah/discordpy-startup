@@ -33,5 +33,10 @@ async def moni(ctx):
 async def zippo(ctx):
     await ctx.send('世界で1番可愛い20歳の女の子、じっぽちゃん☆趣味は麻雀、好きな食べ物は酒とタバコ！推してもいいんだからね♡(・ω＜)★')
 
+@bot.command()
+async def じっぽ(ctx):
+    await ctx.send('世界で1番可愛い20歳の女の子、じっぽちゃん☆趣味は麻雀、好きな食べ物は酒とタバコ！推してもいいんだからね♡(・ω＜)★')
 
+
+    
 bot.run(token)
