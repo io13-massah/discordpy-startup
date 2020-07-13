@@ -29,5 +29,9 @@ async def on_voice_state_update(member, before, after):
 async def moni(ctx):
     await ctx.send('もにわぁ〜令和生まれのぴちぴちギャルだよぉ★')
 
+@bot.command()
+async def zippo(ctx):
+    await ctx.send('ちんぽちんぽ')
+
 
 bot.run(token)
