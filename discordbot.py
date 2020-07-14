@@ -21,11 +21,4 @@ async def on_message(message):
     if message.content == '/moni':
         await message.channel.send('もにわぁ〜令和生まれのぴちぴちギャルだよぉ★')
         
-@client.event
-async def on_message(message):
-    if message.author.bot:
-        return
-    if message.content == '/zippo':
-        await message.channel.send('世界で1番可愛い20歳の女の子、じっぽちゃん☆趣味は麻雀、好きな食べ物は酒とタバコ！推してもいいんだからね♡(・ω＜)★')
-        
 client.run(token)
