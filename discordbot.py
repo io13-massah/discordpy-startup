@@ -75,4 +75,20 @@ async def naka(ctx):
 async def 中(ctx):
     await ctx.send('心はいつも14歳、合法ロリ★なかちゃんです')
 
+@bot.command()
+async def くあん(ctx):
+    await ctx.send('いつでもボディブローお待ちしています。人間サンドバック34歳、殴りやすいボディのたくあんでぇす♪')
+
+@bot.command()
+async def kuan(ctx):
+    await ctx.send('いつでもボディブローお待ちしています。人間サンドバック34歳、殴りやすいボディのたくあんでぇす♪')
+
+@bot.command()
+async def たくあん(ctx):
+    await ctx.send('いつでもボディブローお待ちしています。人間サンドバック34歳、殴りやすいボディのたくあんでぇす♪')
+
+@bot.command()
+async def 悪人(ctx):
+    await ctx.send('いつでもボディブローお待ちしています。人間サンドバック34歳、殴りやすいボディのたくあんでぇす♪')
+
 bot.run(token)
