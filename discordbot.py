@@ -1,25 +1,17 @@
 from discord.ext import commands
-from datetime import datetime, timedelta
 import os
 import traceback
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
-
 @bot.event
 async def on_voice_state_update(member, before, after):
-    
     if member.guild.id == 724335733841854514 and (before.channel != after.channel):
-        now = datetime.utcnow() + timedelta(hours=9)
         alert_channel = client.get_channel(726315919093137458)
         if before.channel is None:
-            msg = f'{now:%m/%d-%H:%M} に {member.name} が {after.channel.name} に参加しました。'
+            msg = f'@ボイチャ通知OK {member.name} が {after.channel.name} に参加しました。'
             await alert_channel.send(msg)
-            
-        elif after.channel is None:
-            msg = f'{now:%m/%d-%H:%M} に {member.name} が {before.channel.name} から逃げました。'
-            await alert_channel.send(msg) 
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -65,7 +57,7 @@ async def どくしょ(ctx):
 
 @bot.command()
 async def dokusho(ctx):
-    await ctx.send('MassahRoomの看板娘、闇の左手のどくしょです！')
+    await ctx.send('MassahRoomの看板娘、どくしょです！')
 
 @bot.command()
 async def naka(ctx):
