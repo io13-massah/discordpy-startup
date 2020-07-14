@@ -110,13 +110,13 @@ async def on_message(message):
     if message.author.bot:
         return
     if message.content == '/kuan':
-        await message.channel.send('いつでもボディブローお待ちしています。人間サンドバック34歳、殴りやすいボディのたくあんでぇす♪')
+        await message.channel.send('いつでもボディブローお待ちしています。人間サンドバック34歳、殴りやすいボディのくあんでぇす♪')
 
 @client.event
 async def on_message(message):
     if message.author.bot:
         return
     if message.content == '/くあん':
-        await message.channel.send('いつでもボディブローお待ちしています。人間サンドバック34歳、殴りやすいボディのたくあんでぇす♪')
+        await message.channel.send('いつでもボディブローお待ちしています。人間サンドバック34歳、殴りやすいボディのくあんでぇす♪')
 
 client.run(token)
