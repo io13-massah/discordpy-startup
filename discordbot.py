@@ -1,5 +1,7 @@
 import discord
-from datetime import datetime, timedelta
+from discord.ext import commands
+import os
+import traceback
 
 client = discord.Client()
 token = os.environ['DISCORD_BOT_TOKEN']
