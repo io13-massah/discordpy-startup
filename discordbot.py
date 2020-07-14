@@ -55,4 +55,24 @@ async def うさ(ctx):
 async def io(ctx):
     await ctx.send('私は前に進む、生え際を置き去りにして。はじめまして、私が鯖主のイオです。')
 
+@bot.command()
+async def doku(ctx):
+    await ctx.send('MassahRoomの看板娘、狂犬のどくしょです！')
+
+@bot.command()
+async def どくしょ(ctx):
+    await ctx.send('MassahRoomの看板娘、狂犬のどくしょです！')
+
+@bot.command()
+async def dokusho(ctx):
+    await ctx.send('MassahRoomの看板娘、狂犬のどくしょです！')
+
+@bot.command()
+async def naka(ctx):
+    await ctx.send('心はいつも14歳、合法ロリ★なかちゃんです')
+
+@bot.command()
+async def 中(ctx):
+    await ctx.send('心はいつも14歳、合法ロリ★なかちゃんです')
+
 bot.run(token)
