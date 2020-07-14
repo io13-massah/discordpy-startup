@@ -57,15 +57,15 @@ async def io(ctx):
 
 @bot.command()
 async def doku(ctx):
-    await ctx.send('MassahRoomの看板娘、狂犬のどくしょです！')
+    await ctx.send('MassahRoomの看板娘、鮮血のどくしょです！')
 
 @bot.command()
 async def どくしょ(ctx):
-    await ctx.send('MassahRoomの看板娘、狂犬のどくしょです！')
+    await ctx.send('MassahRoomの看板娘、閃光のどくしょです！')
 
 @bot.command()
 async def dokusho(ctx):
-    await ctx.send('MassahRoomの看板娘、狂犬のどくしょです！')
+    await ctx.send('MassahRoomの看板娘、闇の左手のどくしょです！')
 
 @bot.command()
 async def naka(ctx):
