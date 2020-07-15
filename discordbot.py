@@ -12,7 +12,7 @@ async def on_voice_state_update(member, before, after):
         alert_channel = client.get_channel(732880477320511551)
         if before.voice.voice_channel is None and after.voice.voice_channel is not None:
         for channel in before.server.channels: 
-            msg = f'<@&724619338333683793> {member.name} が {after.channel.name} に参加しました。'
+            msg = f'{member.name} が {after.channel.name} に参加しました。'
             await alert_channel.send(msg)
 
 @client.event
