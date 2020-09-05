@@ -43,11 +43,11 @@ async def on_member_join(member):
   B_invite_B=0;C_invite_C=0;D_invite_D=0
   Linvite=await server.invites()
   for item in Linvite :
-    if "2z8DQQQ" in str(item) :
+    if "AvBCBEp" in str(item) :
         C_invite_C=item.uses
-    elif "96EqWqK" in str(item) :
+    elif "XYSSEyF" in str(item) :
         B_invite_B=item.uses
-    elif "dnGcKws" in str(item) :
+    elif "8TUtXWN" in str(item) :
         D_invite_D=item.uses
 #   if B_invite_B!=invite_B:
 #     role = server.get_role(B_ROLE_ID)
