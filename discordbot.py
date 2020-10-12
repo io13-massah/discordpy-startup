@@ -77,7 +77,7 @@ async def on_message(message): #message受信時
 
   if message.channel.id == ID_BUMP_ROOM and message.content == "!d bump": #disboardのbumpコマンド実行時&チャンネル指定
     await asyncio.sleep(7200)   #2時間待つ
-    await message.channel.send("<@&724619422769348671> remind 2hours") #remind bump用ロール
+    await message.channel.send("<@&724619422769348671> <@&765198359014277121> remind 2hours") #remind bump用ロール
     return
 
   if message.channel.id == ID_SELF_MEN or message.channel.id == ID_SELF_WOMEN: #自己紹介(男or女)のチャンネル
