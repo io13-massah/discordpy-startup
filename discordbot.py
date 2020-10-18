@@ -28,6 +28,9 @@ FR_ROLE_ID=int(738942097519804506)
 VWAU_ROLE_ID=int(731387113068691506)
 NVWAU_ROLE_ID=int(735786611073351720)
 
+#flagment
+bump_flag=1
+
 #clear
 @client.event
 async def on_ready(): #Bot起動準備完了時
@@ -72,13 +75,19 @@ async def on_member_join(member):
 #clear
 @client.event
 async def on_message(message): #message受信時
+  global bump_flag
   if message.author.bot: #Botだった場合は反応しない
     return
 
   if message.channel.id == ID_BUMP_ROOM and message.content == "!d bump": #disboardのbumpコマンド実行時&チャンネル指定
-    await asyncio.sleep(7200)   #2時間待つ
-    await message.channel.send("<@&724619422769348671> <@&765198359014277121> remind 2hours") #remind bump用ロール
-    return
+    if bump_flag == 1:
+      bump_flag = 0
+      await asyncio.sleep(7200)   #2時間待つ
+      bump_flag = 1
+      await message.channel.send("<@&724619422769348671> <@&765198359014277121> remind 2 hours") #remind bump用ロール
+      return
+    else:
+      await message.channel.send("Bumped within 2 hours") #error message
 
   if message.channel.id == ID_SELF_MEN or message.channel.id == ID_SELF_WOMEN: #自己紹介(男or女)のチャンネル
     member = message.channel.guild.get_member(message.author.id)
