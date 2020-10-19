@@ -43,7 +43,7 @@ async def on_member_join(member):
   user = client.get_user(member.id)
   server=client.get_guild(ServerID)
   channel = client.get_channel(ID_IN_ROOM)
-  B_invite_B=0;C_invite_C=0;D_invite_D=0
+  B_invite_B=0;C_invite_C=0;D_invite_D=0;E_invite_E=0;F_invite_F=0;
   Linvite=await server.invites()
   for item in Linvite :
     if "AvBCBEp" in str(item) :
@@ -52,6 +52,10 @@ async def on_member_join(member):
         B_invite_B=item.uses
     elif "8TUtXWN" in str(item) :
         D_invite_D=item.uses
+    elif "VRu4htG" in str(item) :
+        E_invite_E=item.uses
+    elif "5ptBtvf" in str(item) :
+        F_invite_F=item.uses
 #   if B_invite_B!=invite_B:
 #     role = server.get_role(B_ROLE_ID)
 #     await member.add_roles(role)
@@ -68,7 +72,7 @@ async def on_member_join(member):
 #   invite_C=C_invite_C
 #   invite_D=D_invite_D
   txt1=str(user.name)+"#"+str(user.discriminator)
-  txt2=str(B_invite_B)+"."+str(C_invite_C)+"."+str(D_invite_D)
+  txt2=str(B_invite_B)+"."+str(C_invite_C)+"."+str(D_invite_D)+"."+str(E_invite_E)+"."+str(F_invite_F)
   await channel.send(txt1)
   await channel.send(txt2)
 
