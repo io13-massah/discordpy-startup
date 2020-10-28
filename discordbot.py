@@ -43,8 +43,10 @@ async def on_member_join(member):
   user = client.get_user(member.id)
   server=client.get_guild(ServerID)
   channel = client.get_channel(ID_IN_ROOM)
+  await channel.send("event:member join")
   B_invite_B=0;C_invite_C=0;D_invite_D=0;E_invite_E=0;F_invite_F=0;
   Linvite=await server.invites()
+  await channel.send("invites ok")
   for item in Linvite :
     if "AvBCBEp" in str(item) :
         C_invite_C=item.uses
@@ -56,6 +58,7 @@ async def on_member_join(member):
         E_invite_E=item.uses
     elif "5ptBtvf" in str(item) :
         F_invite_F=item.uses
+  await channel.send("input integer")
   txt1=str(user.name)+"#"+str(user.discriminator)
   txt2=str(B_invite_B)+"."+str(C_invite_C)+"."+str(D_invite_D)+"."+str(E_invite_E)+"."+str(F_invite_F)
   await channel.send(txt1)
