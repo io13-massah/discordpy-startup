@@ -78,7 +78,7 @@ async def on_message(message): #message受信時
     if bump_flag == 1:
       bump_flag = 0
       user = client.get_user(message.author.id)
-      await message.channel.send("winner:@!user_id")
+      await message.channel.send("winner:<@!user_id>")
       await asyncio.sleep(7200)   #2時間待つ
       bump_flag = 1
       await message.channel.send("<@&724619422769348671> <@&765198359014277121> remind 2 hours") #remind bump用ロール
