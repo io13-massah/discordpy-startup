@@ -77,9 +77,7 @@ async def on_message(message): #message受信時
   if message.channel.id == ID_BUMP_ROOM and message.content == "bump": #disboardのbumpコマンド実行時&チャンネル指定
     if bump_flag == 1:
       bump_flag = 0
-      await message.channel.send(message.author.id)
-      user = client.get_user(message.author.id)
-      await message.channel.send("winner:<@!user_id>")
+      await message.channel.send("fastest bumper:<@!message.author.id>")
       await asyncio.sleep(7200)   #2時間待つ
       bump_flag = 1
       await message.channel.send("<@&724619422769348671> <@&765198359014277121> remind 2 hours") #remind bump用ロール
