@@ -67,6 +67,37 @@ async def on_member_join(member):
   await channel.send(txt1)
   await channel.send(txt2)
 
+
+@client.event
+async def on_member_join(member):
+  channel = client.get_channel(ID_IN_ROOM)
+  await channel.send("get channel ID")
+  await channel.send("event:member join")
+  user = client.get_user(member.id)
+  await channel.send("get memberID")
+  server=client.get_guild(ServerID)
+  await channel.send("get severID")
+  B_invite_B=0;C_invite_C=0;D_invite_D=0;E_invite_E=0;F_invite_F=0;
+  Linvite=await server.invites()
+  await channel.send("invites ok")
+  for item in Linvite :
+    if "AvBCBEp" in str(item) :
+        C_invite_C=item.uses
+    elif "XYSSEyF" in str(item) :
+        B_invite_B=item.uses
+    elif "8TUtXWN" in str(item) :
+        D_invite_D=item.uses
+    elif "VRu4htG" in str(item) :
+        E_invite_E=item.uses
+    elif "5ptBtvf" in str(item) :
+        F_invite_F=item.uses
+  await channel.send("input integer")
+  txt1=str(user.name)+"#"+str(user.discriminator)
+  txt2=str(B_invite_B)+"."+str(C_invite_C)+"."+str(D_invite_D)+"."+str(E_invite_E)+"."+str(F_invite_F)
+  await channel.send(txt1)
+  await channel.send(txt2)
+  
+  
 #clear
 @client.event
 async def on_message(message): #message受信時
