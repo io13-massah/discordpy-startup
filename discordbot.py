@@ -40,13 +40,13 @@ async def on_ready(): #Bot起動準備完了時
 #clear
 @client.event
 async def on_member_remove(member):
+  server=client.get_guild(ServerID)
+  await channel.send("get severID")
   channel = client.get_channel(ID_IN_ROOM)
   await channel.send("get channel ID")
   await channel.send("event:member join")
   user = client.get_user(member.id)
   await channel.send("get memberID")
-  server=client.get_guild(ServerID)
-  await channel.send("get severID")
   B_invite_B=0;C_invite_C=0;D_invite_D=0;E_invite_E=0;F_invite_F=0;
   Linvite=await server.invites()
   await channel.send("invites ok")
