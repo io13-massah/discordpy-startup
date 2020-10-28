@@ -56,21 +56,6 @@ async def on_member_join(member):
         E_invite_E=item.uses
     elif "5ptBtvf" in str(item) :
         F_invite_F=item.uses
-#   if B_invite_B!=invite_B:
-#     role = server.get_role(B_ROLE_ID)
-#     await member.add_roles(role)
-#   elif C_invite_C!=invite_C:
-#     role = server.get_role(C_ROLE_ID)
-#     await member.add_roles(role)
-#   elif D_invite_D!=invite_D:
-#     role = server.get_role(D_ROLE_ID)
-#     await member.add_roles(role)
-#   else:
-#     role = server.get_role(I_ROLE_ID)
-#     await member.add_roles(role)
-#   invite_B=B_invite_B
-#   invite_C=C_invite_C
-#   invite_D=D_invite_D
   txt1=str(user.name)+"#"+str(user.discriminator)
   txt2=str(B_invite_B)+"."+str(C_invite_C)+"."+str(D_invite_D)+"."+str(E_invite_E)+"."+str(F_invite_F)
   await channel.send(txt1)
