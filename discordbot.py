@@ -39,7 +39,7 @@ async def on_ready(): #Bot起動準備完了時
 
 #clear
 @client.event
-async def on_member_join(member):
+async def on_member_remove(member):
   channel = client.get_channel(ID_IN_ROOM)
   await channel.send("get channel ID")
   await channel.send("event:member join")
