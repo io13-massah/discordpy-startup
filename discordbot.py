@@ -77,7 +77,7 @@ async def on_message(message): #message受信時
   if message.channel.id == ID_BUMP_ROOM and message.content == "bump": #disboardのbumpコマンド実行時&チャンネル指定
     if bump_flag == 1:
       bump_flag = 0
-      await message,channle.send(message.author.id)
+      await message,channle.send(message.author.user.id)
       user = client.get_user(message.author.id)
       await message.channel.send("winner:<@!user_id>")
       await asyncio.sleep(7200)   #2時間待つ
