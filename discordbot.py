@@ -131,7 +131,7 @@ async def on_error(event,args,kwargs): #Error時ハンドラ
   await channel.send("on_error")
   await channel.send(event)
   await channel.send(args)
-  await channel.send(kwargs)
+#   await channel.send(kwargs)
   await channel.send(sys.exc_info())
   
 # @client.event
