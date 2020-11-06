@@ -128,14 +128,14 @@ async def on_member_update(before, after):#Member情報変更時に呼び出し
       await after.add_roles(role) #vwauのロールID
       return after
 
-@client.event
-async def on_error(event,args,kwargs): #Error時ハンドラ
-  channel = client.get_channel(ID_IN_ROOM)
-  await channel.send(event)
-  await channel.send(args)
-  await channel.send(kwargs)
-  await channel.send(sys.exc_info())
-  return
+# @client.event
+# async def on_error(event,args,kwargs): #Error時ハンドラ
+#   channel = client.get_channel(ID_IN_ROOM)
+#   await channel.send(event)
+#   await channel.send(args)
+#   await channel.send(kwargs)
+#   await channel.send(sys.exc_info())
+#   return
   
 
 # Botの起動とDiscordサーバーへの接続
