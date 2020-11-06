@@ -372,11 +372,11 @@ async def on_guild_unavailable(guild):
 #   await channel.send(user)
 #   return
 
-@client.event
-async def on_invite_create(invite): 
-  channel = client.get_channel(P_ROOM)
-  await channel.send("on_invite_create")
-  await channel.send(invite)
+# @client.event
+# async def on_invite_create(invite): 
+#   channel = client.get_channel(P_ROOM)
+#   await channel.send("on_invite_create")
+#   await channel.send(invite)
 
 @client.event
 async def on_invite_delete(invite): 
