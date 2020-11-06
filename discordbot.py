@@ -74,7 +74,7 @@ async def on_ready(): #Bot起動準備完了時
 async def on_message(message): #message受信時
   global bump_flag
   if message.author.bot: #Botだった場合は反応しない
-    break
+    return
 
   if message.channel.id == ID_BUMP_ROOM and message.content == "bump": #disboardのbumpコマンド実行時&チャンネル指定
     if bump_flag == 1:
@@ -102,7 +102,7 @@ async def on_message(message): #message受信時
 @client.event
 async def on_member_update(before, after):#Member情報変更時に呼び出し
   if before.roles == after.roles: #更新前と更新後のロールが同じ
-    break
+    return
   
   vwau=False;nvwau=False
   
