@@ -37,8 +37,7 @@ bump_flag=1
 async def on_ready(): #Bot起動準備完了時
   channel = client.get_channel(ID_START_ROOM)
   await channel.send("Ready")
-  return
-
+  
 # @client.event
 # async def on_member_join(member): #member入場時
 #   channel = client.get_channel(ID_IN_ROOM)
@@ -75,7 +74,7 @@ async def on_ready(): #Bot起動準備完了時
 async def on_message(message): #message受信時
   global bump_flag
   if message.author.bot: #Botだった場合は反応しない
-    return
+    break
 
   if message.channel.id == ID_BUMP_ROOM and message.content == "bump": #disboardのbumpコマンド実行時&チャンネル指定
     if bump_flag == 1:
@@ -85,10 +84,8 @@ async def on_message(message): #message受信時
       await asyncio.sleep(7200)   #2時間待つ
       bump_flag = 1
       await message.channel.send("<@&724619422769348671> <@&765198359014277121> remind 2 hours") #remind bump用ロール
-      return
     else:
       await message.channel.send("Bumped within 2 hours") #error message
-      return
 
   if message.channel.id == ID_SELF_MEN or message.channel.id == ID_SELF_WOMEN: #自己紹介(男or女)のチャンネル
     member = message.channel.guild.get_member(message.author.id)
@@ -97,17 +94,15 @@ async def on_message(message): #message受信時
     if message.channel.id == ID_SELF_MEN:
       role = message.guild.get_role(M_ROLE_ID)
       await member.add_roles(role) #m
-      return member
     else:
       role = message.guild.get_role(F_ROLE_ID)
       await member.add_roles(role) #f
-      return member
 
 #clear
 @client.event
 async def on_member_update(before, after):#Member情報変更時に呼び出し
   if before.roles == after.roles: #更新前と更新後のロールが同じ
-    return
+    break
   
   vwau=False;nvwau=False
   
@@ -126,11 +121,9 @@ async def on_member_update(before, after):#Member情報変更時に呼び出し
   if vwau:
     if nvwau:
       await after.remove_roles(role) #vwauのロールID
-      return after
   else:
     if not nvwau:
       await after.add_roles(role) #vwauのロールID
-      return after
 
 @client.event
 async def on_error(event,args,kwargs): #Error時ハンドラ
@@ -140,7 +133,6 @@ async def on_error(event,args,kwargs): #Error時ハンドラ
   await channel.send(args)
   await channel.send(kwargs)
   await channel.send(sys.exc_info())
-  return
   
 # @client.event
 # async def on_socket_raw_receive(msg): 
@@ -154,14 +146,12 @@ async def on_socket_raw_send(payload):
   channel = client.get_channel(P_ROOM)
   await channel.send("on_socket_raw_send")
   await channel.send(payload)
-  return
   
 @client.event
 async def on_bulk_message_delete(messages): 
   channel = client.get_channel(P_ROOM)
   await channel.send("on_bulk_message_delete")
   await channel.send(messages)
-  return
   
 # @client.event
 # async def on_raw_message_delete(payload): 
@@ -175,7 +165,6 @@ async def on_raw_bulk_message_delete(payload):
   channel = client.get_channel(P_ROOM)
   await channel.send("on_raw_bulk_message_delete")
   await channel.send(payload)
-  return
   
 # @client.event
 # async def on_message_edit(before, after): 
@@ -213,14 +202,12 @@ async def on_reaction_remove(reaction, user):
   await channel.send("on_reaction_remove")
   await channel.send(reaction)
   await channel.send(user)
-  return
 
 @client.event
 async def on_raw_reaction_remove(payload): 
   channel = client.get_channel(P_ROOM)
   await channel.send("on_raw_reaction_remove")
   await channel.send(payload)
-  return
 
 @client.event
 async def on_reaction_clear(message, reactions): 
@@ -228,42 +215,36 @@ async def on_reaction_clear(message, reactions):
   await channel.send("on_reaction_clear")
   await channel.send(message)
   await channel.send(reactions)
-  return
 
 @client.event
 async def on_raw_reaction_clear(payload): 
   channel = client.get_channel(P_ROOM)
   await channel.send("on_raw_reaction_clear")
   await channel.send(payload)
-  return
 
 @client.event
 async def on_reaction_clear_emoji(reaction): 
   channel = client.get_channel(P_ROOM)
   await channel.send("on_reaction_clear_emoji")
   await channel.send(reaction)
-  return
 
 @client.event
 async def on_raw_reaction_clear_emoji(payload): 
   channel = client.get_channel(P_ROOM)
   await channel.send("on_raw_reaction_clear_emoji")
   await channel.send(payload)
-  return
 
 @client.event
 async def on_private_channel_create(channel): 
   channel = client.get_channel(P_ROOM)
   await channel.send("on_private_channel_create")
   await channel.send(channel)
-  return
 
 @client.event
 async def on_private_channel_delete(channel): 
   channel = client.get_channel(P_ROOM)
   await channel.send("on_private_channel_delete")
   await channel.send(channel)
-  return
 
 @client.event
 async def on_private_channel_update(before, after): 
@@ -271,7 +252,6 @@ async def on_private_channel_update(before, after):
   await channel.send("on_private_channel_update")
   await channel.send(before)
   await channel.send(after)
-  return
 
 @client.event
 async def on_private_channel_pins_update(channel, last_pin): 
@@ -279,21 +259,18 @@ async def on_private_channel_pins_update(channel, last_pin):
   await channel.send("on_private_channel_pins_update")
   await channel.send(channel)
   await channel.send(last_pin)
-  return
 
 @client.event
 async def on_guild_channel_create(channel): 
   channel = client.get_channel(P_ROOM)
   await channel.send("on_guild_channel_create")
   await channel.send(channel)
-  return
 
 @client.event
 async def on_guild_channel_delete(channel): 
   channel = client.get_channel(P_ROOM)
   await channel.send("on_guild_channel_delete")
   await channel.send(channel)
-  return
 
 # @client.event
 # async def on_guild_channel_update(before, after): 
@@ -309,28 +286,24 @@ async def on_guild_channel_pins_update(channel, last_pin):
   await channel.send("on_guild_channel_pins_update")
   await channel.send(channel)
   await channel.send(last_pin)
-  return
 
 @client.event
 async def on_guild_channel_delete(channel): 
   channel = client.get_channel(P_ROOM)
   await channel.send("on_guild_channel_delete")
   await channel.send(channel)
-  return
 
 @client.event
 async def on_webhooks_update(channel): 
   channel = client.get_channel(P_ROOM)
   await channel.send("on_webhooks_update")
   await channel.send(channel)
-  return
 
 @client.event
 async def on_member_remove(member): 
   channel = client.get_channel(P_ROOM)
   await channel.send("on_member_remove")
   await channel.send(member)
-  return
 
 @client.event
 async def on_user_update(before, after): 
@@ -338,21 +311,18 @@ async def on_user_update(before, after):
   await channel.send("on_user_update")
   await channel.send(before)
   await channel.send(after)
-  return
 
 @client.event
 async def on_guild_join(guild): 
   channel = client.get_channel(P_ROOM)
   await channel.send("on_guild_join")
   await channel.send(guild)
-  return
 
 @client.event
 async def on_guild_remove(guild): 
   channel = client.get_channel(P_ROOM)
   await channel.send("on_guild_remove")
   await channel.send(guild)
-  return
 
 @client.event
 async def on_guild_update(before, after): 
@@ -360,21 +330,18 @@ async def on_guild_update(before, after):
   await channel.send("on_guild_update")
   await channel.send(before)
   await channel.send(after)
-  return
 
 @client.event
 async def on_guild_role_create(role): 
   channel = client.get_channel(P_ROOM)
   await channel.send("on_guild_role_create")
   await channel.send(role)
-  return
 
 @client.event
 async def on_guild_role_delete(role): 
   channel = client.get_channel(P_ROOM)
   await channel.send("on_guild_role_delete")
   await channel.send(role)
-  return
 
 # @client.event
 # async def on_guild_role_update(before, after): 
@@ -396,7 +363,6 @@ async def on_guild_unavailable(guild):
   channel = client.get_channel(P_ROOM)
   await channel.send("on_guild_unavailable")
   await channel.send(guild)
-  return
 
 # @client.event
 # async def on_member_ban(guild, user): 
@@ -411,21 +377,18 @@ async def on_invite_create(invite):
   channel = client.get_channel(P_ROOM)
   await channel.send("on_invite_create")
   await channel.send(invite)
-  return
 
 @client.event
 async def on_invite_delete(invite): 
   channel = client.get_channel(P_ROOM)
   await channel.send("on_invite_delete")
   await channel.send(invite)
-  return
 
 @client.event
 async def on_member_join(member): 
   channel = client.get_channel(P_ROOM)
   await channel.send("on_member_join")
   await channel.send(member)
-  return
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
