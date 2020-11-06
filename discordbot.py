@@ -140,12 +140,13 @@ async def on_error(event,args,kwargs): #Error時ハンドラ
 #   await channel.send("on_socket_raw_receive")
 #   await channel.send(msg)
 #   return
-  
-@client.event
-async def on_socket_raw_send(payload): 
-  channel = client.get_channel(P_ROOM)
-  await channel.send("on_socket_raw_send")
-  await channel.send(payload)
+    
+# do not use
+# @client.event
+# async def on_socket_raw_send(payload): 
+#   channel = client.get_channel(P_ROOM)
+#   await channel.send("on_socket_raw_send")
+#   await channel.send(payload)
   
 @client.event
 async def on_bulk_message_delete(messages): 
