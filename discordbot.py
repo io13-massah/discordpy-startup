@@ -398,13 +398,13 @@ async def on_guild_unavailable(guild):
   await channel.send(guild)
   return
 
-@client.event
-async def on_member_ban(guild, user): 
-  channel = client.get_channel(P_ROOM)
-  await channel.send("on_member_ban")
-  await channel.send(guild)
-  await channel.send(user)
-  return
+# @client.event
+# async def on_member_ban(guild, user): 
+#   channel = client.get_channel(P_ROOM)
+#   await channel.send("on_member_ban")
+#   await channel.send(guild)
+#   await channel.send(user)
+#   return
 
 @client.event
 async def on_invite_create(invite): 
