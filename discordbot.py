@@ -177,20 +177,20 @@ async def on_raw_bulk_message_delete(payload):
   await channel.send(payload)
   return
   
-@client.event
-async def on_message_edit(before, after): 
-  channel = client.get_channel(P_ROOM)
-  await channel.send("on_message_edit")
-  await channel.send(before)
-  await channel.send(after)
-  return
+# @client.event
+# async def on_message_edit(before, after): 
+#   channel = client.get_channel(P_ROOM)
+#   await channel.send("on_message_edit")
+#   await channel.send(before)
+#   await channel.send(after)
+#   return
   
-@client.event
-async def on_raw_message_edit(payload): 
-  channel = client.get_channel(P_ROOM)
-  await channel.send("on_raw_message_edit")
-  await channel.send(payload)
-  return
+# @client.event
+# async def on_raw_message_edit(payload): 
+#   channel = client.get_channel(P_ROOM)
+#   await channel.send("on_raw_message_edit")
+#   await channel.send(payload)
+#   return
   
 @client.event
 async def on_reaction_add(reaction, user): 
@@ -295,13 +295,13 @@ async def on_guild_channel_delete(channel):
   await channel.send(channel)
   return
 
-@client.event
-async def on_guild_channel_update(before, after): 
-  channel = client.get_channel(P_ROOM)
-  await channel.send("on_guild_channel_update")
-  await channel.send(before)
-  await channel.send(after)
-  return
+# @client.event
+# async def on_guild_channel_update(before, after): 
+#   channel = client.get_channel(P_ROOM)
+#   await channel.send("on_guild_channel_update")
+#   await channel.send(before)
+#   await channel.send(after)
+#   return
 
 @client.event
 async def on_guild_channel_pins_update(channel, last_pin): 
@@ -376,13 +376,13 @@ async def on_guild_role_delete(role):
   await channel.send(role)
   return
 
-@client.event
-async def on_guild_role_update(before, after): 
-  channel = client.get_channel(P_ROOM)
-  await channel.send("on_guild_role_update")
-  await channel.send(before)
-  await channel.send(after)
-  return
+# @client.event
+# async def on_guild_role_update(before, after): 
+#   channel = client.get_channel(P_ROOM)
+#   await channel.send("on_guild_role_update")
+#   await channel.send(before)
+#   await channel.send(after)
+#   return
 
 @client.event
 async def on_guild_available(guild): 
