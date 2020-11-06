@@ -163,12 +163,12 @@ async def on_bulk_message_delete(messages):
   await channel.send(messages)
   return
   
-@client.event
-async def on_raw_message_delete(payload): 
-  channel = client.get_channel(P_ROOM)
-  await channel.send("on_raw_message_delete")
-  await channel.send(payload)
-  return
+# @client.event
+# async def on_raw_message_delete(payload): 
+#   channel = client.get_channel(P_ROOM)
+#   await channel.send("on_raw_message_delete")
+#   await channel.send(payload)
+#   return
   
 @client.event
 async def on_raw_bulk_message_delete(payload): 
@@ -200,12 +200,12 @@ async def on_reaction_add(reaction, user):
   await channel.send(user)
   return
 
-@client.event
-async def on_raw_reaction_add(payload): 
-  channel = client.get_channel(P_ROOM)
-  await channel.send("on_raw_reaction_add")
-  await channel.send(payload)
-  return
+# @client.event
+# async def on_raw_reaction_add(payload): 
+#   channel = client.get_channel(P_ROOM)
+#   await channel.send("on_raw_reaction_add")
+#   await channel.send(payload)
+#   return
 
 @client.event
 async def on_reaction_remove(reaction, user): 
