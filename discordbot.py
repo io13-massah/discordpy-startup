@@ -142,12 +142,12 @@ async def on_error(event,args,kwargs): #Error時ハンドラ
   await channel.send(sys.exc_info())
   return
   
-@client.event
-async def on_socket_raw_receive(msg): 
-  channel = client.get_channel(P_ROOM)
-  await channel.send("on_socket_raw_receive")
-  await channel.send(msg)
-  return
+# @client.event
+# async def on_socket_raw_receive(msg): 
+#   channel = client.get_channel(P_ROOM)
+#   await channel.send("on_socket_raw_receive")
+#   await channel.send(msg)
+#   return
   
 @client.event
 async def on_socket_raw_send(payload): 
