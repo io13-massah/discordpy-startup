@@ -384,12 +384,12 @@ async def on_guild_role_delete(role):
 #   await channel.send(after)
 #   return
 
-@client.event
-async def on_guild_available(guild): 
-  channel = client.get_channel(P_ROOM)
-  await channel.send("on_guild_available")
-  await channel.send(guild)
-  return
+# @client.event
+# async def on_guild_available(guild): 
+#   channel = client.get_channel(P_ROOM)
+#   await channel.send("on_guild_available")
+#   await channel.send(guild)
+#   return
 
 @client.event
 async def on_guild_unavailable(guild): 
