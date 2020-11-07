@@ -197,18 +197,18 @@ async def on_raw_bulk_message_delete(payload):
 #   await channel.send(payload)
 #   return
 
-@client.event
-async def on_reaction_remove(reaction, user): 
-  channel = client.get_channel(P_ROOM)
-  await channel.send("on_reaction_remove")
-  await channel.send(reaction)
-  await channel.send(user)
+# @client.event
+# async def on_reaction_remove(reaction, user): 
+#   channel = client.get_channel(P_ROOM)
+#   await channel.send("on_reaction_remove")
+#   await channel.send(reaction)
+#   await channel.send(user)
 
-@client.event
-async def on_raw_reaction_remove(payload): 
-  channel = client.get_channel(P_ROOM)
-  await channel.send("on_raw_reaction_remove")
-  await channel.send(payload)
+# @client.event
+# async def on_raw_reaction_remove(payload): 
+#   channel = client.get_channel(P_ROOM)
+#   await channel.send("on_raw_reaction_remove")
+#   await channel.send(payload)
 
 @client.event
 async def on_reaction_clear(message, reactions): 
@@ -261,17 +261,11 @@ async def on_private_channel_pins_update(channel, last_pin):
   await channel.send(channel)
   await channel.send(last_pin)
 
-@client.event
-async def on_guild_channel_create(channel): 
-  channel = client.get_channel(P_ROOM)
-  await channel.send("on_guild_channel_create")
-  await channel.send(channel)
-
-@client.event
-async def on_guild_channel_delete(channel): 
-  channel = client.get_channel(P_ROOM)
-  await channel.send("on_guild_channel_delete")
-  await channel.send(channel)
+# @client.event
+# async def on_guild_channel_create(channel): 
+#   channel = client.get_channel(P_ROOM)
+#   await channel.send("on_guild_channel_create")
+#   await channel.send(channel)
 
 # @client.event
 # async def on_guild_channel_update(before, after): 
@@ -288,11 +282,11 @@ async def on_guild_channel_pins_update(channel, last_pin):
   await channel.send(channel)
   await channel.send(last_pin)
 
-@client.event
-async def on_guild_channel_delete(channel): 
-  channel = client.get_channel(P_ROOM)
-  await channel.send("on_guild_channel_delete")
-  await channel.send(channel)
+# @client.event
+# async def on_guild_channel_delete(channel): 
+#   channel = client.get_channel(P_ROOM)
+#   await channel.send("on_guild_channel_delete")
+#   await channel.send(channel)
 
 @client.event
 async def on_webhooks_update(channel): 
@@ -332,17 +326,17 @@ async def on_guild_update(before, after):
   await channel.send(before)
   await channel.send(after)
 
-@client.event
-async def on_guild_role_create(role): 
-  channel = client.get_channel(P_ROOM)
-  await channel.send("on_guild_role_create")
-  await channel.send(role)
+# @client.event
+# async def on_guild_role_create(role): 
+#   channel = client.get_channel(P_ROOM)
+#   await channel.send("on_guild_role_create")
+#   await channel.send(role)
 
-@client.event
-async def on_guild_role_delete(role): 
-  channel = client.get_channel(P_ROOM)
-  await channel.send("on_guild_role_delete")
-  await channel.send(role)
+# @client.event
+# async def on_guild_role_delete(role): 
+#   channel = client.get_channel(P_ROOM)
+#   await channel.send("on_guild_role_delete")
+#   await channel.send(role)
 
 # @client.event
 # async def on_guild_role_update(before, after): 
