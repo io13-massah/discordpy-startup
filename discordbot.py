@@ -85,9 +85,8 @@ async def on_message(message): #message受信時
       bump_flag = 1
       await message.channel.send("<@&724619422769348671> <@&765198359014277121> remind 2 hours") #remind bump用ロール
     else:
-      miss_message="<@!"+str(message.author.id)+"> "+"LOSE！！"
+      miss_message="<@!"+str(message.author.id)+"> "+"LOSE！！\nなんで負けたか 次のbumpまでに考えといてください。"
       await message.channel.send(miss_message) #error message
-      await message.channel.send("なんで負けたか 次のbumpまでに考えといてください。")
 
   if message.channel.id == ID_SELF_MEN or message.channel.id == ID_SELF_WOMEN: #自己紹介(男or女)のチャンネル
     member = message.channel.guild.get_member(message.author.id)
