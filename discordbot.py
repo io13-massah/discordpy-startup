@@ -108,7 +108,7 @@ async def on_member_update(before, after):#Member情報変更時に呼び出し
   vwau=False;nvwau=False
   
   for item in after.roles :
-    if str(item)=='vwau' :
+    if str(item)=='vwau' : 
         vwau = True
         #該当する要素が見つかった時点でブレイク。
         break
