@@ -76,12 +76,15 @@ async def on_message(message): #message受信時
   if message.author.bot: #Botだった場合は反応しない
     return
 
-  if message.channel.id == ID_BUMP_ROOM and message.content == "!d bump": #disboardのbumpコマンド実行時&チャンネル指定
+  if message.channel.id == ID_BUMP_ROOM and message.content == "!d bump":
+    miss_message="<@!"+str(message.author.id)+"> "+"期間外だよ！"
+    await message.channel.send(miss_message) #error message
+  if message.channel.id == ID_BUMP_ROOM and message.content == "bump": #disboardのbumpコマンド実行時&チャンネル指定
     if bump_flag == 1:
       bump_flag = 0
       bumper_message="fastest bumper : "+"<@!"+str(message.author.id)+">"
       await message.channel.send(bumper_message)
-      await asyncio.sleep(7200)   #2時間待つ
+      await asyncio.sleep(3600)   #2時間待つ
       bump_flag = 1
       await message.channel.send("<@&724619422769348671> <@&765198359014277121> remind 2 hours") #remind bump用ロール
     else:
