@@ -76,10 +76,10 @@ async def on_message(message): #message受信時
   if message.author.bot: #Botだった場合は反応しない
     return
 
-  if message.channel.id == ID_BUMP_ROOM and message.content == "bump":
+  if message.channel.id == ID_BUMP_ROOM and message.content == "!d bump":
     miss_message="<@!"+str(message.author.id)+"> "+"期間外だよ！"
     await message.channel.send(miss_message) #error message
-  if message.channel.id == ID_BUMP_ROOM and message.content == "!d bump": #disboardのbumpコマンド実行時&チャンネル指定
+  if message.channel.id == ID_BUMP_ROOM and message.content == "bump": #disboardのbumpコマンド実行時&チャンネル指定
     if bump_flag == 1:
       bump_flag = 0
       bumper_message="fastest bumper : "+"<@!"+str(message.author.id)+">"
